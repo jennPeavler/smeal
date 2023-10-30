@@ -1,19 +1,31 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
-// import { Image } from 'expo-image';
+import { StarRating } from '../../components/StarRating';
+import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';   
 
 import { colors } from '../../style/colors';
 
-const MealCard = ({ day, name, difficulty, prepTime, cookTime, imageUrl }) => (
+const MealCard = ({ id, name, difficulty, cookTime, totalTime, servings, url, imageUrl, ingredients, steps, notes, nutrition, day }) => (
   <View style={[styles.card, {backgroundColor: getBackgroundColor(day)}]}>
     <View style={[styles.dayContainer, {backgroundColor: getBackgroundColor(day)}]}>
       <Text style={styles.day}>{day}</Text>
     </View>
     <Image style={styles.image} source={{ uri: imageUrl}} resizeMode='cover'/>
     <View style={styles.textContainer}>
-      <Text style={styles.name}>{name}</Text>
+      <Text style={styles.name} numberOfLines={2}>{name}</Text>
+      <StarRating />
       <Text style={styles.difficulty}>{difficulty}</Text>
-      <Text style={styles.cookTime}>{cookTime}</Text>
+      <View style={styles.footer}>
+        <View style={styles.footerContainer}>
+          <Ionicons name="timer-outline" size={24} color="white" />
+          <Text style={styles.footerContent}>{cookTime}</Text>
+        </View>
+        <View style={styles.footerContainer}>
+        <FontAwesome5 name="utensil-spoon" size={20} color="white" />
+          <Text style={styles.footerContent}>{servings}</Text>
+        </View>
+      </View>
     </View>
   </View>
 );
@@ -22,7 +34,8 @@ const styles = StyleSheet.create({
   card: {
     borderRadius: 10,
     margin: 10,
-    height: 350
+    height: 350,
+    width: 200
   },
   dayContainer: {
     position: 'absolute',
@@ -47,8 +60,26 @@ const styles = StyleSheet.create({
   },
   name: {
     color: 'white',
-    fontSize: 25,
-  }
+    fontSize: 20,
+  },
+  difficulty: {
+    color: 'white'
+  },  
+  footer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 25,
+  },
+  footerContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  footerContent: {
+    color: 'white',
+    marginLeft: 5
+  },
 });
 
 const getBackgroundColor = (day) => {
@@ -56,7 +87,7 @@ const getBackgroundColor = (day) => {
     case 'Monday':
       return colors.blue1;
     case 'Tuesday':
-      return colors.yellow;
+      return colors.red;
     case 'Wednesday':
       return colors.green1;
     case 'Thursday':

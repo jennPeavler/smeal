@@ -1,25 +1,20 @@
 import React, { useState } from 'react';
 import { View, FlatList, StyleSheet, Button } from 'react-native';
 import MealCard from './MealCard';
+import { recipes } from '../../data/recipes';
 
 const MealPlan = () => {
-  const imageUrl = 'https://picsum.photos/200/175';
-  const [mealData, setMealData] = useState([
-    { day: 'Monday', name: 'Grilled Fish', difficulty: 'easy', prepTime: '2o minutes', cookTime: '15 minutes', imageUrl },
-    { day: 'Tuesday', name: 'Beef Stir-fry', difficulty: 'medium', prepTime: '1o minutes', cookTime: '25 minutes', imageUrl },
-    { day: 'Wednesday', name: 'Vegetable Curry', difficulty: 'hard', prepTime: '15 minutes', cookTime: '35 minutes', imageUrl },
-    { day: 'Thursday', name: 'Grilled Fish', difficulty: 'easy', prepTime: '2o minutes', cookTime: '15 minutes', imageUrl },
-    { day: 'Friday', name: 'Beef Stir-fry', difficulty: 'medium', prepTime: '1o minutes', cookTime: '25 minutes', imageUrl },
-    { day: 'Saturday', name: 'Vegetable Curry', difficulty: 'hard', prepTime: '15 minutes', cookTime: '35 minutes', imageUrl },
-    { day: 'Sunday', name: 'Vegetable Curry', difficulty: 'hard', prepTime: '15 minutes', cookTime: '35 minutes', imageUrl },
-  ]);
+  const [mealData, setMealData] = useState([]);
 
-  const renderItem = ({ item: { day, name, difficulty, prepTime, cookTime, imageUrl } }) => (
-    <MealCard day={day} name={name} difficulty={difficulty} prepTime={prepTime} cookTime={cookTime} imageUrl={imageUrl} />
+  const renderItem = ({ item }) => (
+    <MealCard {...item} />
   );
 
   const generateMealPlan = () => {
-    // Logic to randomly generate a meal plan
+    recipes[0].day = 'Monday';
+    recipes[1].day = 'Tuesday';
+    recipes[2].day = 'Wednesday';
+    setMealData(recipes);
   };
 
   return (
@@ -30,7 +25,7 @@ const MealPlan = () => {
         showsHorizontalScrollIndicator={false}
         data={mealData}
         renderItem={renderItem}
-        keyExtractor={(item, index) => index.toString()}
+        keyExtractor={(item) => item.id.toString()}
       />
     </View>
   );
