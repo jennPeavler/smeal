@@ -1,34 +1,40 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, Pressable } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 import { StarRating } from '../../components/StarRating';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';   
 
 import { colors } from '../../style/colors';
 
-const MealCard = ({ id, name, difficulty, cookTime, totalTime, servings, url, imageUrl, ingredients, steps, notes, nutrition, day }) => (
-  <View style={[styles.card, {backgroundColor: getBackgroundColor(day)}]}>
-    <View style={[styles.dayContainer, {backgroundColor: getBackgroundColor(day)}]}>
-      <Text style={styles.day}>{day}</Text>
-    </View>
-    <Image style={styles.image} source={{ uri: imageUrl}} resizeMode='cover'/>
-    <View style={styles.textContainer}>
-      <Text style={styles.name} numberOfLines={2}>{name}</Text>
-      <StarRating />
-      <Text style={styles.difficulty}>{difficulty}</Text>
-      <View style={styles.footer}>
-        <View style={styles.footerContainer}>
-          <Ionicons name="timer-outline" size={24} color="white" />
-          <Text style={styles.footerContent}>{cookTime}</Text>
-        </View>
-        <View style={styles.footerContainer}>
-        <FontAwesome5 name="utensil-spoon" size={20} color="white" />
-          <Text style={styles.footerContent}>{servings}</Text>
+const MealCard = ({ id, name, difficulty, cookTime, totalTime, servings, url, imageUrl, ingredients, steps, notes, nutrition, day }) => {
+  const navigation = useNavigation();
+  const backgroundColor = getBackgroundColor(day)
+  return (
+    <Pressable style={[styles.card, {backgroundColor: backgroundColor}]} onPress={() => navigation.navigate('Recipe', { id, name, difficulty, cookTime, totalTime, servings, url, imageUrl, ingredients, steps, notes, nutrition, day, backgroundColor })}>
+      <View style={[styles.dayContainer, {backgroundColor: backgroundColor}]}>
+        <Text style={styles.day}>{day}</Text>
+      </View>
+      <Image style={styles.image} source={{ uri: imageUrl}} resizeMode='cover'/>
+      <View style={styles.textContainer}>
+        <Text style={styles.name} numberOfLines={2}>{name}</Text>
+        <StarRating />
+        <Text style={styles.difficulty}>{difficulty}</Text>
+        <View style={styles.footer}>
+          <View style={styles.footerContainer}>
+            <Ionicons name="timer-outline" size={24} color="white" />
+            <Text style={styles.footerContent}>{cookTime}</Text>
+          </View>
+          <View style={styles.footerContainer}>
+          <FontAwesome5 name="utensil-spoon" size={20} color="white" />
+            <Text style={styles.footerContent}>{servings}</Text>
+          </View>
         </View>
       </View>
-    </View>
-  </View>
-);
+    </Pressable>
+  );
+};
 
 const styles = StyleSheet.create({
   card: {
