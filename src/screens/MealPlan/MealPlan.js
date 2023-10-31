@@ -14,6 +14,10 @@ const MealPlan = () => {
     recipes[0].day = 'Monday';
     recipes[1].day = 'Tuesday';
     recipes[2].day = 'Wednesday';
+    recipes[3].day = 'Thursday';
+    recipes[4].day = 'Friday';
+    recipes[5].day = 'Saturday';
+    // recipes[0].day = 'Sunday';
     setMealData(recipes);
   };
 

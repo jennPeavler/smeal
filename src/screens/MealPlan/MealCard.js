@@ -27,7 +27,7 @@ const MealCard = ({ id, name, difficulty, cookTime, totalTime, servings, url, im
             <Text style={styles.footerContent}>{cookTime}</Text>
           </View>
           <View style={styles.footerContainer}>
-          <FontAwesome5 name="utensil-spoon" size={20} color="white" />
+            <FontAwesome5 name="utensil-spoon" size={20} color="white" />
             <Text style={styles.footerContent}>{servings}</Text>
           </View>
         </View>
