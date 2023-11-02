@@ -101,7 +101,7 @@ const getBackgroundColor = (day) => {
     case 'Friday':
       return colors.blue1;
     case 'Saturday':
-      return colors.yellow;
+      return colors.red;
     case 'Sunday':
       return colors.green1;
     

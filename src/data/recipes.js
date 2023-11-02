@@ -109,7 +109,7 @@ export const recipes = [
       { name: 'salt', quantity: '2', units: 'teaspoons', textDisplay: '2 teaspoons salt' },
       { name: 'black pepper', quantity: '1/2', units: 'teaspoon', textDisplay: '1/2 teaspoon black pepper' },
       { name: 'fresh taragon', quantity: '1', units: 'ounce', textDisplay: '1-ounce package of fresh tarragon leaves, rough chopped, about 1/4-1/3 cup' },
-      { name: 'asparagus', quantity: '1', unit: 'bunch', textDisplay: '1 extra-large bunch asparagus, trimmed (about 1 1/2 pounds)' },
+      { name: 'asparagus', quantity: '1', units: 'bunch', textDisplay: '1 extra-large bunch asparagus, trimmed (about 1 1/2 pounds)' },
       { name: 'leeks', quantity: '2', textDisplay: '1-2 large leeks, sliced into 1/2 thick rounds' },
       { name: 'chicken breasts', quantity: '5', textDisplay: '4-5 medium chicken breasts (boneless, skinless)' },
       { name: 'parchment paper', quantity: '1', units: 'sheet', textDisplay: '1 sheet parchment paper'}
@@ -317,10 +317,10 @@ export const recipes = [
       { name: 'fennel bulb', quantity: '1', textDisplay: '1 large fennel bulb, cored and thinly sliced (or sub celery and more asparugus)' },
       { name: 'leek', quantity: '1', textDisplay: '1 large leek, white and light green parts, thinly sliced into half moons' },
       { name: 'garlic cloves', quantity: '4', textDisplay: '4 cloves garlic, roughly chopped' },
-      { name: 'preserved lemon', quantity: '2', unit: 'tablespoons', textDisplay: '2 tablespoons finely chopped preserved lemon (or sub zest from another lemon)' },
-      { name: 'veggie broth', quantity: '1/2', unit: 'cup', textDisplay: '1/2 cup chicken or veggie broth or stock, more as needed' },
-      { name: 'white wine', quantity: '1/2', unit: 'cup', textDisplay: '1/2 cup white wine (or sub more broth and a squeeze of lemon' },
-      { name: 'asparagus', quantity: '1', unit: 'bunch', textDisplay: '1 large bunch asparagus, cut into 1-2 inch pieces, tough ends removed' },
+      { name: 'preserved lemon', quantity: '2', units: 'tablespoons', textDisplay: '2 tablespoons finely chopped preserved lemon (or sub zest from another lemon)' },
+      { name: 'veggie broth', quantity: '1/2', units: 'cup', textDisplay: '1/2 cup chicken or veggie broth or stock, more as needed' },
+      { name: 'white wine', quantity: '1/2', units: 'cup', textDisplay: '1/2 cup white wine (or sub more broth and a squeeze of lemon' },
+      { name: 'asparagus', quantity: '1', units: 'bunch', textDisplay: '1 large bunch asparagus, cut into 1-2 inch pieces, tough ends removed' },
     ],
     steps: [
       {
@@ -368,23 +368,23 @@ export const recipes = [
       { name: 'onion', quantity: '1', textDisplay: '1 onion, diced' },
       { name: 'garlic cloves', quantity: '6', textDisplay: '4-6 garlic cloves, chopped roughly' },
       { name: 'fennel bulb', quantity: '1', textDisplay: '1 large fennel bulb, cored, diced thinly (or sub 2 cups chopped celery)' },
-      { name: 'carrots', quantity: '1', unit: 'bunch', textDisplay: '2 cups chopped carrots (1/2 inch think)' },
-      { name: 'white beans', quantity: '2', unit: 'cans', textDisplay: '2 cans white beans, drained' },
-      { name: 'canned tomatoes', quantity: '14', unit: 'oz', textDisplay: '1 x 14 oz can diced or crushed tomatoes' },
-      { name: 'chicken stock', quantity: '4', unit: 'cups', textDisplay: '4 cups chicken stock' },
-      { name: 'penne pasta', quantity: '1', unit: 'cup', textDisplay: '1 cup dry penne pasta' },
-      { name: 'kosher salt', quantity: '2', unit: 'teaspoons', textDisplay: '2 teaspoons kosher salt, more to taste' },
-      { name: 'italian seasoning', quantity: '2', unit: 'teaspoons', textDisplay: '2 teaspoons italian seasoning' },
-      { name: 'kale', quantity: '1', unit: 'bunch', textDisplay: 'A couple handlfuls chopped kale, optional' },
-      { name: 'red chili flakes', quantity: '1', unit: 'teaspoon', textDisplay: '1 teaspoon red chili flakes, adjust to taste' },
-      { name: 'black pepper', quantity: '1/4', unit: 'teaspoon', textDisplay: '1/4 teaspoon black pepper, adjust to taste' },
-      { name: 'parsley', quantity: '1', unit: 'bunch', textDisplay: '1 packed cup flat-leaf parsley, roughly chopped' },
+      { name: 'carrots', quantity: '1', units: 'bunch', textDisplay: '2 cups chopped carrots (1/2 inch think)' },
+      { name: 'white beans', quantity: '2', units: 'cans', textDisplay: '2 cans white beans, drained' },
+      { name: 'canned tomatoes', quantity: '14', units: 'oz', textDisplay: '1 x 14 oz can diced or crushed tomatoes' },
+      { name: 'chicken stock', quantity: '4', units: 'cups', textDisplay: '4 cups chicken stock' },
+      { name: 'penne pasta', quantity: '1', units: 'cup', textDisplay: '1 cup dry penne pasta' },
+      { name: 'kosher salt', quantity: '2', units: 'teaspoons', textDisplay: '2 teaspoons kosher salt, more to taste' },
+      { name: 'italian seasoning', quantity: '2', units: 'teaspoons', textDisplay: '2 teaspoons italian seasoning' },
+      { name: 'kale', quantity: '1', units: 'bunch', textDisplay: 'A couple handlfuls chopped kale, optional' },
+      { name: 'red chili flakes', quantity: '1', units: 'teaspoon', textDisplay: '1 teaspoon red chili flakes, adjust to taste' },
+      { name: 'black pepper', quantity: '1/4', units: 'teaspoon', textDisplay: '1/4 teaspoon black pepper, adjust to taste' },
+      { name: 'parsley', quantity: '1', units: 'bunch', textDisplay: '1 packed cup flat-leaf parsley, roughly chopped' },
       { name: 'garlic cloves', quantity: '2', textDisplay: '2 garlic cloves, roughly chopped' },
       { name: 'lemon', quantity: '1', textDisplay: 'Zest of one lemon + 2 teaspoons juice' },
       { name: 'olive oil', quantity: '1/2', units: 'cup', textDisplay: '1/2 cup olive oil' },
       { name: 'kosher salt', quantity: '1/4', units: 'teaspoon', textDisplay: '1/8 - 1/4 teaspoon kosher salt' },
       { name: 'black pepper', quantity: '1/4', units: 'teaspoon', textDisplay: '1/4 teaspoon black pepper, more to taste' },
-      { name: 'red chili flakes', quantity: '1', quantity: 'teaspoon', textDisplay: 'pinch chili flakes, optional' },
+      { name: 'red chili flakes', quantity: '1', units: 'teaspoon', textDisplay: 'pinch chili flakes, optional' },
     ],
     steps: [
       {
@@ -416,5 +416,84 @@ export const recipes = [
         directions: 'Serve in bowls and add a swirly spoonful of gremolata to each.  Optionally serve with crusty bread and grated pecorino or parmesan.'
       },
     ],
+  },
+  {
+    id: 7,
+    name: 'Beef Stew with Carrots & Potatoes',
+    category: 'beef', 
+    difficulty: 'medium', 
+    cookTime: 180, 
+    totalTime: 210,
+    servings: '6', 
+    url: 'https://www.onceuponachef.com/recipes/beef-stew-with-carrots-potatoes.html', 
+    imageUrl: 'https://i0.wp.com/www.onceuponachef.com/images/2011/02/beef-stew-with-carrots-potatoes.jpg',
+    ingredients: [
+      { name: 'boneless beef chuck', quantity: '3', units: 'pounds', textDisplay: '3 pounds boneless beef chuck (well-marbled), cut into 1 1/2-inch pieces' },
+      { name: 'salt', quantity: '2', textDisplay: 'teaspoons' },
+      { name: 'fresh ground pepper', quantity: '1', textDisplay: '1 teaspoon freshly ground pepper' },
+      { name: 'olive oil', quantity: '3', units: 'tablespoons', textDisplay: '3 tablespoons olive oil' },
+      { name: 'yellow onions', quantity: '2', textDisplay: '2 medium yellow onions, cut into 1-inch chuncks' },
+      { name: 'garlic cloves', quantity: '7', textDisplay: '7 cloves garlic, peelied and smashed' },
+      { name: 'balsamic vinegar', quantity: '2', units: 'tablespoons', textDisplay: '2 tablespoons balsamic vinegar' },
+      { name: 'tomato paste', quantity: '1 1/2', units: 'tablespoons', textDisplay: '1 1/2 tablespoons tomato paste' },
+      { name: 'all-purpose flour', quantity: '1/4', units: 'cup', textDisplay: '1/4 cup all-purpose flour' },
+      { name: 'dry red wine', quantity: '2', units: 'cups', textDisplay: '2 cups dry red wine' },
+      { name: 'beef broth', quantity: '2', units: 'cups', textDisplay: '2 cups beef broth' },
+      { name: 'bay leaf', quantity: '1', textDisplay: '1 bay leaf' },
+      { name: 'dried thyme', quantity: '1/2', units: 'teaspoon', textDisplay: '1/2 teaspoon dried thyme' },
+      { name: 'sugar', quantity: '1 1/2', units: 'teaspoons', textDisplay: '1 1/2 teaspoons sugar' },
+      { name: 'carrots', quantity: '4', textDisplay: '4 large carrots, peeled and cut into 1-inch chunks on a diagonal' },
+      { name: 'baby yukon potatoes', quantity: '1', units: 'pounds', textDisplay: '1 pound baby yukon potatoes, cut in half' },
+      { name: 'fresh parsley', quantity: '1', units: 'bunch', textDisplay: 'Fresh chopped parsley, for serving (optional)' },
+    ],
+    steps: [
+      {
+        number: 1,
+        directions: 'Preheat the oven to 325°F and set rack in the lower middle position.'
+      },
+      {
+        number: 2,
+        directions: 'Pat the beef dry and season with the salt and pepper (can be done 1 day ahead).  In a large Dutch oven, heat 1 tablespoon of the olive oil over medium-high heat until hot and shimmering.  Brown the meat in 3 batches, turning with tongs, for about 5 minutes per batch; add one tablespoon more oil for each batch.  Transfer the meat to a large plate, set aside.'
+      },
+      {
+        number: 3,
+        directions: 'Add the onions, garlic and balsamic; cook, stirring with a wooden spoon and scraping the brown bits, for about 5 minutes.'
+      },
+      {
+        number: 4,
+        directions: 'Add the tomato paste and cook for 1 minute more.'
+      },
+      {
+        number: 5,
+        directions: 'Add the beef with its juices back to the pan and sprinkle with the flour.  Stir and cook until flour is dissolved (1-2 minutes).'
+      },
+      {
+        number: 6,
+        directions: 'Add the wine, beef broth, 2 cups of water, bay leaf, thyme and sugar.  Stir and scrape up any brown bits.  Bring to boil.'
+      },
+      {
+        number: 7,
+        directions: 'Cover the pot with lid, transfer to the oven, braise for 2 hours.'
+      },
+      {
+        number: 8,
+        directions: 'Remove from oven and add carrots and potatoes.  Cover and cook for 1 hour more or until vegetables are cooked, the broth is thickened and meat is tender.'
+      },
+      {
+        number: 7,
+        directions: 'Fish out bay leaf and adjust seasoning if necessary. Garnish with parsley.'
+      },
+    ],
+    nutrition: [
+      {name: 'Calories', information: '539'},
+      {name: 'Fat', information: '18 g'},
+      {name: 'Saturated Fat', information: '6 g'},
+      {name: 'Carbohydrates', information: '32 g'},
+      {name: 'Sugar', information: '8 g'},
+      {name: 'Fiber', information: '4 g'},
+      {name: 'Protein', information: '54 g'},
+      {name: 'Sodium', information: '1189 mg'},
+      {name: 'Cholesterol', information: '143 mg'},
+    ]
   },
 ]

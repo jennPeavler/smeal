@@ -1,28 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
 import GroceryItem from './GroceryItem';
+import { MealPlanContext } from '../../state/MealPlanContext';
 
 const GroceryList = () => {
-  const [groceryData, setGroceryData] = useState([
-    { name: 'Chicken', quantity: 1, unit: 'lb', category: 'meat' },
-    { name: 'Beef', quantity: 1, unit: 'lb', category: 'meat' },
-    { name: 'Milk', quantity: 1, unit: 'gallon', category: 'dairy' },
-    { name: 'Cheese', quantity: 1, unit: 'cup', category: 'dariy' },
-      
-    
-  ]);
+  const { mealData } = useContext(MealPlanContext);
+  //temporary hard coded data that needs to be replaced with global MealData.
+  const [groceryList, setGroceryList] = useState([]);
+
+  useEffect(() => {
+    const groceryList = generateGroceryList(mealData);
+    setGroceryList(groceryList)
+  }, [mealData])
 
   const renderItem = ({ item }) => {
     return (
-    <GroceryItem name={item.name} isChecked={item.isChecked} />
+    <GroceryItem { ...item } />
   )};
 
   return (
     <View style={styles.container}>
       <FlatList
-        data={groceryData}
+        data={groceryList}
         renderItem={renderItem}
         keyExtractor={(item, index) => index.toString()}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );
@@ -34,5 +36,31 @@ const styles = StyleSheet.create({
     padding: 16,
   },
 });
+
+function generateGroceryList(mealData) {
+  const groceryList = {};
+
+  mealData.forEach(meal => {
+    meal.ingredients.forEach(ingredient => {
+      const key = ingredient.name.toLowerCase().trim();
+
+      if (groceryList[key]) {
+        groceryList[key].quantity = parseFloat(groceryList[key].quantity) + parseFloat(ingredient.quantity);
+      } else {
+        groceryList[key] = {
+          name: ingredient.name,
+          quantity: ingredient.quantity,
+          units: ingredient.units,
+        };
+      }
+    });
+  });
+
+  return Object.values(groceryList).map(item => {
+    return {
+      ...item
+    };
+  });
+}
 
 export default GroceryList;
