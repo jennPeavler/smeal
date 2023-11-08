@@ -5,25 +5,25 @@ import { colors } from '../../style/colors';
 import { MealPlanContext } from '../../state/MealPlanContext';
 
 const MealPlan = () => {
-  const { mealData, generateMealPlan } = useContext(MealPlanContext);
+  const { mealPlan, setMealPlan, recipeOptions, shuffleRecipes } = useContext(MealPlanContext);
 
   useEffect(() => {
-    generateMealPlan();
-  }, [generateMealPlan])
+    shuffleRecipes();
+  }, [])
 
-  const renderItem = ({ item }) => (
-    <MealCard {...item} />
+  const renderItem = ({ item, index }) => (
+    <MealCard {...item} index={index} setMealPlan={setMealPlan} mealPlan={mealPlan} />
   );
 
   return (
     <View style={styles.container}>
-      <Pressable onPress={generateMealPlan} style={styles.shuffleButton}>
-        <Text style={styles.shuffleButtonText}>Shuffle Meal Plan</Text>
+      <Pressable onPress={shuffleRecipes} style={styles.shuffleButton}>
+        <Text style={styles.shuffleButtonText}>Shuffle Recipes</Text>
       </Pressable>
       <FlatList
         horizontal={true}
         showsHorizontalScrollIndicator={false}
-        data={mealData}
+        data={recipeOptions}
         renderItem={renderItem}
         keyExtractor={(item) => item.id.toString()}
       />

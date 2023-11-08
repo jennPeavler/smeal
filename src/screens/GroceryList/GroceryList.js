@@ -1,17 +1,16 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { View, FlatList, StyleSheet } from 'react-native';
+import { View, FlatList, StyleSheet, Text } from 'react-native';
 import GroceryItem from './GroceryItem';
 import { MealPlanContext } from '../../state/MealPlanContext';
 
 const GroceryList = () => {
-  const { mealData } = useContext(MealPlanContext);
-  //temporary hard coded data that needs to be replaced with global MealData.
+  const { mealPlan } = useContext(MealPlanContext);
   const [groceryList, setGroceryList] = useState([]);
 
   useEffect(() => {
-    const groceryList = generateGroceryList(mealData);
+    const groceryList = generateGroceryList(mealPlan);
     setGroceryList(groceryList)
-  }, [mealData])
+  }, [mealPlan])
 
   const renderItem = ({ item }) => {
     return (
@@ -25,6 +24,7 @@ const GroceryList = () => {
         renderItem={renderItem}
         keyExtractor={(item, index) => index.toString()}
         showsVerticalScrollIndicator={false}
+        ListEmptyComponent={<Text>Set a meal plan to generate a grocery list</Text>}
       />
     </View>
   );
@@ -37,10 +37,10 @@ const styles = StyleSheet.create({
   },
 });
 
-function generateGroceryList(mealData) {
+function generateGroceryList(mealPlan) {
   const groceryList = {};
 
-  mealData.forEach(meal => {
+  mealPlan.forEach(meal => {
     meal.ingredients.forEach(ingredient => {
       const key = ingredient.name.toLowerCase().trim();
 

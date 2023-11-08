@@ -8,14 +8,19 @@ import { FontAwesome5 } from '@expo/vector-icons';
 
 import { colors } from '../../style/colors';
 
-const MealCard = ({ id, name, difficulty, cookTime, totalTime, servings, url, imageUrl, ingredients, steps, notes, nutrition, day }) => {
+const MealCard = ({ id, name, difficulty, cookTime, totalTime, servings, url, imageUrl, ingredients, steps, notes, nutrition, index, mealPlan, setMealPlan }) => {
+  const onSelectRecipe = (event) => {
+    event.stopPropagation();
+
+    setMealPlan([...mealPlan, { id, name, difficulty, cookTime, totalTime, servings, url, imageUrl, ingredients, steps, notes, nutrition }]);
+  }
   const navigation = useNavigation();
-  const backgroundColor = getBackgroundColor(day)
+  const backgroundColor = getBackgroundColor(index)
   return (
-    <Pressable style={[styles.card, {backgroundColor: backgroundColor}]} onPress={() => navigation.navigate('Recipe', { id, name, difficulty, cookTime, totalTime, servings, url, imageUrl, ingredients, steps, notes, nutrition, day, backgroundColor })}>
-      <View style={[styles.dayContainer, {backgroundColor: backgroundColor}]}>
-        <Text style={styles.day}>{day}</Text>
-      </View>
+    <Pressable style={[styles.card, {backgroundColor: backgroundColor}]} onPress={() => navigation.navigate('Recipe', { id, name, difficulty, cookTime, totalTime, servings, url, imageUrl, ingredients, steps, notes, nutrition, backgroundColor })}>
+      <Pressable style={[styles.dayContainer, {backgroundColor: backgroundColor}]} onPress={onSelectRecipe}>
+        <Text style={styles.day}>SELECT</Text>
+      </Pressable>
       <Image style={styles.image} source={{ uri: imageUrl}} resizeMode='cover'/>
       <View style={styles.textContainer}>
         <Text style={styles.name} numberOfLines={2}>{name}</Text>
@@ -88,21 +93,21 @@ const styles = StyleSheet.create({
   },
 });
 
-const getBackgroundColor = (day) => {
-  switch (day) {
-    case 'Monday':
+const getBackgroundColor = (index) => {
+  switch (index) {
+    case 0:
       return colors.blue1;
-    case 'Tuesday':
+    case 1:
       return colors.red;
-    case 'Wednesday':
+    case 2:
       return colors.green1;
-    case 'Thursday':
+    case 3:
       return colors.orange1;
-    case 'Friday':
+    case 4:
       return colors.blue1;
-    case 'Saturday':
+    case 5:
       return colors.red;
-    case 'Sunday':
+    case 6:
       return colors.green1;
     
   }

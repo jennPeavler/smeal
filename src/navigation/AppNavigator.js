@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MealPlan from '../screens/MealPlan/MealPlan';
 import GroceryList from '../screens/GroceryList/GroceryList';
 import Recipe  from '../screens/Recipe/Recipe';
+import RecipeList from '../screens/RecipeList/RecipeList';
 import { colors } from '../style/colors';
 
 const Tab = createBottomTabNavigator();
@@ -11,12 +12,13 @@ const Home = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen name="MealPlan" component={MealPlan} options={{
-        title: "Weekly Meal Plan",
+        title: "Meal Plan",
         headerStyle: { backgroundColor: colors.yellow },
         headerTintColor: 'white',
         headerTintStyle: { fontWeight: 'bold' }
       }}/>
-      <Tab.Screen name="GroceryList" component={GroceryList} />
+      <Tab.Screen name="RecipeList" title="Recipe List" component={RecipeList} />
+      <Tab.Screen name="GroceryList" title="Grocery List" component={GroceryList} />
     </Tab.Navigator>
   );
 }

@@ -4,21 +4,20 @@ import { recipes } from '../data/recipes';
 export const MealPlanContext = createContext();
 
 export const MealPlanProvider = ({ children }) => {
-  const [mealData, setMealData] = useState([]);
+  const [mealPlan, setMealPlan] = useState([]);
+  const [recipeOptions, setRecipeOptions] = useState([]);
   
-  const generateMealPlan = () => {
-    recipes[0].day = 'Monday';
-    recipes[1].day = 'Tuesday';
-    recipes[2].day = 'Wednesday';
-    recipes[3].day = 'Thursday';
-    recipes[4].day = 'Friday';
-    recipes[5].day = 'Saturday';
-    recipes[6].day = 'Sunday';
-    setMealData(recipes);
+  const shuffleRecipes = () => {
+    for (let i = recipes.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [recipes[i], recipes[j]] = [recipes[j], recipes[i]];
+    }
+    
+    setRecipeOptions(recipes.slice(0, 7));
   };
 
   return (
-    <MealPlanContext.Provider value={{ mealData, generateMealPlan }}>
+    <MealPlanContext.Provider value={{ mealPlan, setMealPlan, recipeOptions, shuffleRecipes }}>
       {children}
     </MealPlanContext.Provider>
   );

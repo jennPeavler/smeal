@@ -5,8 +5,8 @@ import { StarRating } from "../../components/StarRating";
 import  ChecklistItem  from './ChecklistItem';
 
 const Recipe = ({ route }) => {
-  const { id, name, difficulty, cookTime, totalTime, servings, url, imageUrl, ingredients, steps, notes, nutrition, day, backgroundColor } = route.params;
-  console.log(backgroundColor)
+  const { id, name, difficulty, cookTime, totalTime, servings, url, imageUrl, ingredients, steps, notes, nutrition, backgroundColor } = route.params;
+  
   return (
     <ScrollView>
       <View style={[styles.header, { backgroundColor }]}>
@@ -28,7 +28,6 @@ const Recipe = ({ route }) => {
       </View>
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Instructions</Text>
-        {/* {steps.map(step => <View style={styles.step}><Text style={{fontWeight: 'bold'}}>{`${step.number}. `}</Text><Text>{`${step.directions}`}</Text></View>)} */}
         {steps.map(step => <ChecklistItem displayText={step.directions} id={`${id}step#${step.number}`} />)}
       </View>
     </ScrollView>

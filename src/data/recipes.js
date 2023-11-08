@@ -496,4 +496,81 @@ export const recipes = [
       {name: 'Cholesterol', information: '143 mg'},
     ]
   },
+  {
+    id: 8,
+    name: 'Stir-Fried Lo Mein Noodles With Pork and Vegetables',
+    category: 'pork', 
+    difficulty: 'medium', 
+    cookTime: 10, 
+    totalTime: 40,
+    servings: '4', 
+    url: 'https://www.seriouseats.com/stir-fried-lo-mein-noodles-pork-vegetables-recipe', 
+    imageUrl: 'https://www.seriouseats.com/thmb/u2d6etfqOnIzZ1X4TSnpuigjXqI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/SEA-QiAi-stir-fried-lo-mein-noodles-pork-vegetables-recipe-hero-a55a4baa9f22449fbe036142f1047430.jpg',
+    ingredients: [
+      { name: 'fresh lo mein noodles', quantity: '1', units: 'pound', textDisplay: '1 pound fresh lo mein noodles' },
+      { name: 'boneless pork loin chops', quantity: '1', units: 'pound', textDisplay: '1 pound country-style boneless pork ribs or boneless pork loin chops' },
+      { name: 'baking soda', quantity: '1', units: 'teaspoon', textDisplay: '1 teaspoon baking soda' },
+      { name: 'sugar', quantity: '3', units: 'tablespoons', textDisplay: '3 tablespoons sugar' },
+      { name: 'soy sauce', quantity: '3', units: 'tablespoons', textDisplay: '3 tablespoons soy sauce' },
+      { name: 'oyster sacue', quantity: '3', units: 'tablespoons', textDisplay: '3 tablespoons oyster sauce' },
+      { name: 'balsamic vinegar', quantity: '2', units: 'tablespoons', textDisplay: '2 tablespoons balsamic vinegar' },
+      { name: 'sesame oil', quantity: '1', units: 'tablespoon', textDisplay: '1 tablespoon sesame oil' },
+      { name: 'fish sauce', quantity: '1', units: 'tablespoon', textDisplay: '1 tablespoon fish sauce' },
+      { name: 'corn starch', quantity: '1', units: 'tablespoon', textDisplay: '1 tablespoon corn starch' },
+      { name: 'avocado oil', quantity: '3', units: 'tablespoons', textDisplay: '3 tablespoons avocado oil, divided' },
+      { name: 'fresh ginger', quantity: '3', units: 'inches', textDisplay: '3-inch fresh ginger, peeled and minced' },
+      { name: 'garlic cloves', quantity: '3', units: 'teaspoon', textDisplay: '3 garlic cloves, minced' },
+      { name: 'scallions', quantity: '1', units: 'bunch', textDisplay: '4 scallions, white parts cut in 1-inch pieces, light green parts very thinly sliced, divided' },
+      { name: 'purple cabbage', quantity: '1/2', units: 'head', textDisplay: '1 1/2 cups shredded cored purple cabbage' },
+      { name: 'napa cabbage', quantity: '1/2', units: 'head', textDisplay: '1 1/2 cups shredded cored napa cabbage or chinese broccoli' },
+      { name: 'carrots', quantity: '2', textDisplay: '1 cup julienned carrots' },
+      { name: 'sesame seeds', quantity: '2', units: 'tablespoons', textDisplay: 'Toasted sesame seeds, for garnish (optional)' },
+      { name: 'chili paste', quantity: '2', units: 'tablespoons', textDisplay: 'Sambal oelek (chili paste), for garnish (optional)' },
+    ],
+    steps: [
+      {
+        number: 1,
+        directions: 'Bring a pot of salted water to a boil and cook noodles according to package directions, stirring regularly with tongs or long chopsticks, until al dente and separated. Drain noodles and set aside.'
+      },
+      {
+        number: 2,
+        directions: 'Trim pork of excess fat and cut into thin strips, about 1/4 inch wide by 2 inches long. In a bowl, stir together baking soda and 1/2 cup cold water. Add pork, stir until thoroughly coated, then let stand at room temperature for 15 minutes.'
+      },
+      {
+        number: 3,
+        directions: 'Meanwhile, in a medium bowl, whisk together sugar, soy sauce, oyster sauce, vinegar, sesame oil, wine, fish sauce, and cornstarch until sugar is dissolved. Set sauce aside.'
+      },
+      {
+        number: 4,
+        directions: 'Drain pork well, rinse with cold water, then pat dry with paper towels. Add pork back to rinsed and dried bowl. Stir in 2 tablespoons (15ml) of the sauce and mix well.'
+      },
+      {
+        number: 5,
+        directions: 'In a wok or large cast iron skillet, heat 1 tablespoon (15ml) neutral oil over medium-high heat until shimmering. Add ginger, garlic, and white scallion pieces and stir-fry for 30 seconds. Increase heat to high and add purple cabbage, Chinese broccoli (or Napa cabbage), and carrots. Cook, stirring and tossing, until vegetables are charred in spots and just softened, 3 to 5 minutes. Transfer to a plate.'
+      },
+      {
+        number: 6,
+        directions: 'Add 1 tablespoon (15ml) neutral oil to wok or skillet and heat over high heat until smoking. Add pork, spreading it out in a single layer, and let cook on one side until crisp and brown, 2 to 3 minutes. Continue to cook, stirring and tossing, until just cooked through, about 1 minute longer. Transfer to plate with vegetables.'
+      },
+      {
+        number: 7,
+        directions: 'Wipe out wok or skillet, then add remaining 1 tablespoon (15ml) neutral oil and heat over high heat until smoking. Add noodles and cook, tossing and stirring, until hot.'
+      },
+      {
+        number: 8,
+        directions: 'Add remaining sauce, vegetables, and pork to noodles and toss well over heat to combine. Transfer lo mein to a platter and sprinkle sliced green scallions all over, along with sesame seeds, if using. Serve right away, passing sambal oelek at the table if desired.'
+      },
+    ],
+    nutrition: [
+      {name: 'Calories', information: '671'},
+      {name: 'Fat', information: '31 g'},
+      {name: 'Saturated Fat', information: '7 g'},
+      {name: 'Carbohydrates', information: '52 g'},
+      {name: 'Sugar', information: '13 g'},
+      {name: 'Fiber', information: '3 g'},
+      {name: 'Protein', information: '44 g'},
+      {name: 'Sodium', information: '1783 mg'},
+      {name: 'Cholesterol', information: '150 mg'},
+    ]
+  },
 ]
