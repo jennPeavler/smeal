@@ -5,14 +5,14 @@ import { colors } from '../../style/colors';
 import { MealPlanContext } from '../../state/MealPlanContext';
 
 const MealPlan = () => {
-  const { mealPlan, setMealPlan, recipeOptions, shuffleRecipes } = useContext(MealPlanContext);
+  const { recipeOptions, shuffleRecipes } = useContext(MealPlanContext);
 
   useEffect(() => {
     shuffleRecipes();
   }, [])
 
   const renderItem = ({ item, index }) => (
-    <MealCard {...item} index={index} setMealPlan={setMealPlan} mealPlan={mealPlan} />
+    <MealCard {...item} index={index} />
   );
 
   return (

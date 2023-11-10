@@ -17,7 +17,7 @@ export const MealPlanProvider = ({ children }) => {
   };
 
   return (
-    <MealPlanContext.Provider value={{ mealPlan, setMealPlan, recipeOptions, shuffleRecipes }}>
+    <MealPlanContext.Provider value={{ mealPlan, setMealPlan, recipeOptions, setRecipeOptions, shuffleRecipes }}>
       {children}
     </MealPlanContext.Provider>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, StyleSheet, Image, Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
@@ -6,16 +6,20 @@ import { StarRating } from '../../components/StarRating';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';   
 
+import { MealPlanContext } from '../../state/MealPlanContext';
 import { colors } from '../../style/colors';
 
-const MealCard = ({ id, name, difficulty, cookTime, totalTime, servings, url, imageUrl, ingredients, steps, notes, nutrition, index, mealPlan, setMealPlan }) => {
+const MealCard = ({ id, name, difficulty, cookTime, totalTime, servings, url, imageUrl, ingredients, steps, notes, nutrition, index }) => {
+  const { mealPlan, setMealPlan, recipeOptions, setRecipeOptions } = useContext(MealPlanContext);
+  const navigation = useNavigation();
+  const backgroundColor = getBackgroundColor(index)
   const onSelectRecipe = (event) => {
     event.stopPropagation();
 
-    setMealPlan([...mealPlan, { id, name, difficulty, cookTime, totalTime, servings, url, imageUrl, ingredients, steps, notes, nutrition }]);
+    setMealPlan([...mealPlan, { id, name, difficulty, cookTime, totalTime, servings, url, imageUrl, ingredients, steps, notes, nutrition, backgroundColor }]);
+    setRecipeOptions(recipeOptions.filter(recipe => recipe.id !== id))
   }
-  const navigation = useNavigation();
-  const backgroundColor = getBackgroundColor(index)
+ 
   return (
     <Pressable style={[styles.card, {backgroundColor: backgroundColor}]} onPress={() => navigation.navigate('Recipe', { id, name, difficulty, cookTime, totalTime, servings, url, imageUrl, ingredients, steps, notes, nutrition, backgroundColor })}>
       <Pressable style={[styles.dayContainer, {backgroundColor: backgroundColor}]} onPress={onSelectRecipe}>
@@ -29,7 +33,7 @@ const MealCard = ({ id, name, difficulty, cookTime, totalTime, servings, url, im
         <View style={styles.footer}>
           <View style={styles.footerContainer}>
             <Ionicons name="timer-outline" size={24} color="white" />
-            <Text style={styles.footerContent}>{cookTime}</Text>
+            <Text style={styles.footerContent}>{totalTime}</Text>
           </View>
           <View style={styles.footerContainer}>
             <FontAwesome5 name="utensil-spoon" size={20} color="white" />
