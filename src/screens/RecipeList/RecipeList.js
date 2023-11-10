@@ -1,5 +1,5 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { View, Text, FlatList, StyleSheet } from 'react-native';
+import React, { useContext } from 'react';
+import { Text, FlatList } from 'react-native';
 import { MealPlanContext } from '../../state/MealPlanContext';
 import RecipeCard from './RecipeCard';
 
@@ -15,7 +15,7 @@ const RecipeList = () => {
       data={mealPlan}
       renderItem={renderItem}
       keyExtractor={item => item.id.toString()}
-      ListEmptyComponent={<Text>Set a meal plan to generate a recipe list</Text>}
+      ListEmptyComponent={<Text style={{ padding: 16 }}>Set a meal plan to generate a recipe list</Text>}
     />
   )
 }
