@@ -30,15 +30,13 @@ const Home = () => {
         tabBarInactiveTintColor: 'white',
         tabBarStyle: {
           backgroundColor: colors.orange2
-        }
-      })}
-    >
-      <Tab.Screen name="MealPlan" component={MealPlan} options={{
-        title: "Meal Plan",
+        },
         headerStyle: { backgroundColor: colors.orange2 },
         headerTintColor: 'white',
         headerTintStyle: { fontWeight: 'bold' }
-      }}/>
+      })}
+    >
+      <Tab.Screen name="MealPlan" title="Meal Plan" component={MealPlan} />
       <Tab.Screen name="RecipeList" title="Recipe List" component={RecipeList} />
       <Tab.Screen name="GroceryList" title="Grocery List" component={GroceryList} />
     </Tab.Navigator>
@@ -50,7 +48,7 @@ const Stack = createNativeStackNavigator();
 const AppNavigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} options={{ headerShown: false }}/>
+      <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
       <Stack.Screen name="Recipe" component={Recipe} />
     </Stack.Navigator>
   );
