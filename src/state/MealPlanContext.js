@@ -6,6 +6,7 @@ export const MealPlanContext = createContext();
 export const MealPlanProvider = ({ children }) => {
   const [mealPlan, setMealPlan] = useState([]);
   const [recipeOptions, setRecipeOptions] = useState([]);
+  const [selectedMealCategories, setSelectedMealCategories] = useState([]);
   
   const shuffleRecipes = () => {
     for (let i = recipes.length - 1; i > 0; i--) {
@@ -17,7 +18,7 @@ export const MealPlanProvider = ({ children }) => {
   };
 
   return (
-    <MealPlanContext.Provider value={{ mealPlan, setMealPlan, recipeOptions, setRecipeOptions, shuffleRecipes }}>
+    <MealPlanContext.Provider value={{ mealPlan, setMealPlan, recipeOptions, setRecipeOptions, shuffleRecipes, selectedMealCategories, setSelectedMealCategories }}>
       {children}
     </MealPlanContext.Provider>
   );

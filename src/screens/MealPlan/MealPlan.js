@@ -1,11 +1,12 @@
 import React, { useContext, useEffect } from 'react';
 import { View, FlatList, StyleSheet, Pressable, Text } from 'react-native';
+import MealCategorySelect from './MealCategorySelect';
 import MealCard from './MealCard';
 import { colors } from '../../style/colors';
 import { MealPlanContext } from '../../state/MealPlanContext';
 
 const MealPlan = () => {
-  const { recipeOptions, shuffleRecipes } = useContext(MealPlanContext);
+  const { recipeOptions, shuffleRecipes, selectedMealCategories, setSelectedMealCategories } = useContext(MealPlanContext);
 
   useEffect(() => {
     shuffleRecipes();
@@ -17,6 +18,7 @@ const MealPlan = () => {
 
   return (
     <View style={styles.container}>
+      <MealCategorySelect selectedMealCategories={selectedMealCategories} setSelectedMealCategories={setSelectedMealCategories} />
       <Pressable onPress={shuffleRecipes} style={styles.shuffleButton}>
         <Text style={styles.shuffleButtonText}>Shuffle Recipes</Text>
       </Pressable>
