@@ -33,12 +33,10 @@ const MealCategorySelect = ({ selectedMealCategories, setSelectedMealCategories 
   };
 
   const renderPill = ({ category }) => (
-    <View key={`pill-${category.name}`} style={styles.pill}>
+    <Pressable key={`pill-${category.name}`} style={styles.pill} onPress={() => handleSelectMealCategory({ category })}>
       <Text style={styles.pillName}>{category.name}</Text>
-      <Pressable onPress={() => handleSelectMealCategory({ category })}>
-        <Text style={styles.pillClose}>X</Text>
-      </Pressable>
-    </View>
+      <Text style={styles.pillClose}>X</Text>
+    </Pressable>
   );
 
   const renderCategory = ({ category }) => (
@@ -47,9 +45,11 @@ const MealCategorySelect = ({ selectedMealCategories, setSelectedMealCategories 
     </Pressable>
   )
 
+  const borderStyle = dropdownVisible ? { borderBottomLeftRadius: 0, borderBottomRightRadius: 0 } : { borderBottomLeftRadius: 5, borderBottomRightRadius: 5 }
+
   return (
-    <View>
-      <Pressable onPress={() => setDropdownVisible(!dropdownVisible)} style={styles.dropdownBtn}>
+    <View style={styles.container}>
+      <Pressable onPress={() => setDropdownVisible(!dropdownVisible)} style={[styles.dropdownBtn, borderStyle]}>
         <Text>Choose Protein</Text>
       </Pressable>
       <Modal visible={dropdownVisible} transparent onRequestClose={() => setDropdownVisible(false)}>
@@ -60,7 +60,7 @@ const MealCategorySelect = ({ selectedMealCategories, setSelectedMealCategories 
         </Pressable> 
       </Modal>
 
-      <View style={styles.pillBox}>
+      <View style={[styles.pillBox, selectedMealCategories.length ? { marginTop: 15} : {}]}>
         {selectedMealCategories.map(category => renderPill({ category }))}
       </View>
 
@@ -69,11 +69,13 @@ const MealCategorySelect = ({ selectedMealCategories, setSelectedMealCategories 
 };
 
 const styles = StyleSheet.create({
+  container: {
+    display: 'flex',
+    alignItems: 'center',
+  },
   modalOverlay: {
     flex: 1,
-    // justifyContent: 'center',
     alignItems: 'center',
-    
   },
   dropdownBtn: {
     backgroundColor: 'white',
@@ -96,7 +98,9 @@ const styles = StyleSheet.create({
   pillBox: {
     display: 'flex',
     flexDirection: 'row',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    gap: 10
   },
   pill: {
     display: 'flex',

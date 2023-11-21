@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.green2
   },
   shuffleButton: {
-    backgroundColor: colors.green1,
+    backgroundColor: colors.orange2,
     padding: 12,
     borderRadius: 5,
     marginTop: 15,

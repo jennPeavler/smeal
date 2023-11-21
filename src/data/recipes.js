@@ -429,7 +429,7 @@ export const recipes = [
     imageUrl: 'https://i0.wp.com/www.onceuponachef.com/images/2011/02/beef-stew-with-carrots-potatoes.jpg',
     ingredients: [
       { name: 'boneless beef chuck', quantity: '3', units: 'pounds', textDisplay: '3 pounds boneless beef chuck (well-marbled), cut into 1 1/2-inch pieces' },
-      { name: 'salt', quantity: '2', textDisplay: 'teaspoons' },
+      { name: 'salt', quantity: '2', units: 'teaspoons', textDisplay: '2 teaspoons salt' },
       { name: 'fresh ground pepper', quantity: '1', textDisplay: '1 teaspoon freshly ground pepper' },
       { name: 'olive oil', quantity: '3', units: 'tablespoons', textDisplay: '3 tablespoons olive oil' },
       { name: 'yellow onions', quantity: '2', textDisplay: '2 medium yellow onions, cut into 1-inch chuncks' },
